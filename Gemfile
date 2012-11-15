@@ -1,10 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.9'
+gem 'bootstrap-sass', '2.0.4'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
+end
+
+group :development do
+  gem 'annotate', '2.5.0'
 end
 
 # Gems used only for assets and not required
@@ -24,3 +29,9 @@ end
 group :production do
   gem 'pg', '0.12.2'
 end
+
+source 'https://rubygems.org'
+
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"

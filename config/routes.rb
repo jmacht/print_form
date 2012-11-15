@@ -1,5 +1,14 @@
-PrintForm::Application.routes.draw do
-  # The priority is based upon order of creation:
+SampleApp::Application.routes.draw do
+  get "users/new"
+
+  root to: 'static_pages#home'
+
+  match '/signup',  to: 'users#new'
+  match '/help',    to: 'static_pages#help'
+  match '/about',   to: 'static_pages#about'
+  match '/contact', to: 'static_pages#contact'
+  match '/print', to: 'static_pages#print'
+    # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
