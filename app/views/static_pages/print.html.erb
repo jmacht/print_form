@@ -1,6 +1,13 @@
 <% provide(:title, 'Print') %>
 <h1>Print</h1>
-<p>
-  Learn about printing
-  <a href="http://dpc@uconn.edu">print</a>.
-</p>
+
+
+<%= form_tag do %>
+
+	<%= radio_button_tag(:ink, "black") %>
+	<%= label_tag(:ink_black, "Black & White") %>
+	<%= radio_button_tag(:ink, "color") %>
+	<%= label_tag(:ink_color, "Full Color") %>
+
+	<%= submit_tag "Submit my Print Request", class: "btn btn-large btn-primary" %>
+<% end %>
