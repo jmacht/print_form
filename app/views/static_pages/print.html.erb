@@ -1,13 +1,21 @@
 <% provide(:title, 'Print') %>
 <h1>Print</h1>
 
-
 <%= form_tag do %>
-
-	<%= radio_button_tag(:ink, "black") %>
-	<%= label_tag(:ink_black, "Black & White") %>
-	<%= radio_button_tag(:ink, "color") %>
-	<%= label_tag(:ink_color, "Full Color") %>
-
-	<%= submit_tag "Submit my Print Request", class: "btn btn-large btn-primary" %>
+   Print Job Name: <%= text_field "item", "name"%><br />
+   Value: <%= text_field "item", "value"%><br />
+   Ink: <%= radio_button("post", "category", "rails")%> Black
+   		<%= radio_button("post", "category", "ruby")%> Color<br />
+   Number of Copies: <%= text_field "item", "copies" "size" => 10 %><br />
+   Duplex: <%= %><br />
+   Paper Size: <%= %><br />
+   Paper Stock: <%= %><br />
+   Paper Color: <%= %><br />
+   Collating: <%= %><br />
+   Folding: <%= %><br />
+   Binding Type: <%= select("post", "bind", [["Coil", 1], ["Comb", 2], ["Tape", 3], ["Staple", 4], ["2 Hole", 5], ["3 Hole", 6]]) %><br />
+   Laminate: <%= select("post", "lam", [["Yes", 1], ["No", 2]])%><br />
+   Special Instructions: <%= text_area "post", "body", "cols" => 5, "rows" => 5 %><br />
+   Payment Method: <%= %><br />
+   <%= submit_tag "Create my Print Job"%>
 <% end %>
