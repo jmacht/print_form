@@ -3,12 +3,11 @@
 
   <h2>
     This is the home page for Your One Stop Print Shop
-    <a href="http://uconn.edu/">Enjoy your print experience.
+    Enjoy your print experience.
   </h2>
 
   <%= link_to "Print Now!", print_path, class: "btn btn-large btn-primary" %>
-  <%= link_to "Sign Up", signup_path, class: "btn btn-large btn-primary" %>
-  <%= link_to "Forgot Password", '#', class: "btn btn-large btn-primary" %>
+  <%= link_to "View Your Profile", current_user, class: "btn btn-large btn-primary" %>
 </div>
 
 <%= link_to image_tag("rails.png", alt: "Rails"), 'http://uconn.edu/' %>

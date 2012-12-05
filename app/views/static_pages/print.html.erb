@@ -1,21 +1,51 @@
 <% provide(:title, 'Print') %>
-<h1>Print</h1>
+<h1>Submit a New Print Job</h1>
 
+<div class="row" >
 <%= form_tag do %>
-   Print Job Name: <%= text_field "item", "name"%><br />
-   Value: <%= text_field "item", "value"%><br />
-   Ink: <%= radio_button("post", "category", "rails")%> Black
-   		<%= radio_button("post", "category", "ruby")%> Color<br />
-   Number of Copies: <%= text_field "item", "copies" "size" => 10 %><br />
-   Duplex: <%= %><br />
-   Paper Size: <%= %><br />
-   Paper Stock: <%= %><br />
-   Paper Color: <%= %><br />
-   Collating: <%= %><br />
-   Folding: <%= %><br />
-   Binding Type: <%= select("post", "bind", [["Coil", 1], ["Comb", 2], ["Tape", 3], ["Staple", 4], ["2 Hole", 5], ["3 Hole", 6]]) %><br />
-   Laminate: <%= select("post", "lam", [["Yes", 1], ["No", 2]])%><br />
-   Special Instructions: <%= text_area "post", "body", "cols" => 5, "rows" => 5 %><br />
-   Payment Method: <%= %><br />
-   <%= submit_tag "Create my Print Job"%>
+
+
+   <h3>Print Job Name: </h3><%= text_field "item", "name"%><br />
+
+   <h3>Ink: </h3><div class="btn-group" data-toggle="buttons-radio">
+  						<button type="button" class="btn">Black & White</button>
+ 					    <button type="button" class="btn">Color</button>
+				   </div><br />
+
+   <h3>Number of Copies: </h3><%= text_field "item", "copies" "size" => 2 %><br />
+
+   <h3>Duplex: </h3><div class="btn-group" data-toggle="buttons-radio">
+  						<button type="button" class="btn">One Sided</button>
+ 					    <button type="button" class="btn">Two Sided</button>
+				   </div><br />
+
+   <h3>Paper Size: </h3><%= select("post", "psize", [["8.5 x 11", 1], ["8.5 x 14", 2], ["11 x 17", 3], ["12 x 18", 4]]) %><br />
+
+   <h3>Paper Stock: </h3><div class="btn-group" data-toggle="buttons-radio">
+  						<button type="button" class="btn">65#</button>
+ 					    <button type="button" class="btn">80#</button>
+ 					    <button type="button" class="btn">110#</button>
+				   </div><br />
+
+   <h3>Paper Color: </h3><%= select("post", "clr", [["White", 1], ["Yellow", 2], ["Green", 3], ["Blue", 4]]) %><br />
+
+   <h3>Collating: </h3><div class="btn-group" data-toggle="buttons-radio">
+  						<button type="button" class="btn">Yes</button>
+ 					    <button type="button" class="btn">No</button>
+				   </div><br />
+
+   <h3>Folding: </h3><%= select("post", "fold", [["Halves", 1], ["Thirds", 2], ["Fourths", 3]]) %><br />
+
+   <h3>Binding Type: </h3><%= select("post", "bind", [["Coil", 1], ["Comb", 2], ["Tape", 3], ["Staple", 4], ["2 Hole", 5], ["3 Hole", 6]]) %><br />
+
+   <h3>Laminate: </h3><div class="btn-group" data-toggle="buttons-radio">
+  						<button type="button" class="btn">Yes</button>
+ 					    <button type="button" class="btn">No</button>
+				   </div><br />
+
+   <h3>Special Instructions: </h3><%= text_area "post", "body", "cols" => 5, "rows" => 5 %><br />
+
+   <button type="button" class="btn btn-danger btn-large">Upload File</button>
+   <button type="button" class="btn btn-large btn-primary" data-loading-text="Loading...">Submit Print Job</button>
 <% end %>
+</div>
