@@ -14,7 +14,8 @@ require 'spec_helper'
 describe User do
 
   before do
-    @user = User.new(name: "Example User", email: "user@example.com", 
+    @user = User.new(name: "Example User", email: "user@example.com", address: "100 Main St.",
+                      town: "Storrs", state: "Connecticut", phone: "555-555-5555"
                      password: "foobar", password_confirmation: "foobar")
   end
 
@@ -27,7 +28,26 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:address) }
+  it { should respond_to(:town) }
+  it { should respond_to(:state) }
+  it { should respond_to(:phone) }
   it { should be_valid }
+
+  describe "when phone is not present" do
+    before {@user.phone = " " }
+    it { should_not be_valid}
+  end
+
+  describe "when town is not present" do
+    before {@user.town = " " }
+    it { should_not be_valid}
+  end
+
+  describe "when address is not present" do
+    before {@user.address = " " }
+    it { should_not be_valid}
+  end
 
   describe "when name is not present" do
     before { @user.name = " " }

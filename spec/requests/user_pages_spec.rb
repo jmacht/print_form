@@ -33,6 +33,10 @@ describe "signup" do
       before do
         fill_in "Name",         with: "Example User"
         fill_in "Email",        with: "user@example.com"
+        fill_in "Address",      with: "100 Main st."
+        fill_in "Town",         with: "Storrs"
+        fill_in "State",        with: "Connecticut"
+        fill_in "Phone",        with: "555-555-5555"
         fill_in "Password",     with: "foobar"
         fill_in "Confirmation", with: "foobar"
       end
