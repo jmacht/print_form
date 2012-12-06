@@ -1,3 +1,4 @@
+<% if signed_in? %>
 <div class="center hero-unit">
   <h1>Welcome to UConn Print Solutions</h1>
 
@@ -11,3 +12,18 @@
 </div>
 
 <%= link_to image_tag("rails.png", alt: "Rails"), 'http://uconn.edu/' %>
+<% else %>
+<div class="center hero-unit">
+  <h1>Welcome to UConn Print Solutions</h1>
+
+  <h2>
+    This is the home page for Your One Stop Print Shop
+    Enjoy your print experience.
+  </h2>
+
+  <%= link_to "Print Now!", print_path, class: "btn btn-large btn-primary" %>
+  <%= link_to "Sign In", signin_path, class: "btn btn-large btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails"), 'http://uconn.edu/' %>
+<% end %>
